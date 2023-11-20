@@ -5,6 +5,6 @@ export const handler = async (
 ): Promise<APIGatewayProxyResult> => {
   return {
     statusCode: 200,
-    body: JSON.stringify({ message: "Primeira Função OK" }),
+    body: JSON.stringify({ message: "Exemplo Chamada Lambda" }),
   };
 };
