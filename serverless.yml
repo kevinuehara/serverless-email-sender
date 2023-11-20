@@ -1,0 +1,26 @@
+app: serverless-email
+service: serverless-email
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+
+functions:
+  main:
+    handler: src/main.handler
+    events:
+      - httpApi:
+          path: /users
+          method: get
+  send-email:
+    handler: src/sendEmail.handler
+    events:
+      - httpApi:
+          path: /send-email
+          method: post
+      
+plugins:
+  - serverless-offline
+  - serverless-plugin-typescript
+  - serverless-dotenv-plugin
